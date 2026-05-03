@@ -30,12 +30,8 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 42%, rgba(255, 255, 255, 0.03)),
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: auto, 58px 58px, 58px 58px;
-  opacity: 0.8;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 42%, rgba(255, 255, 255, 0.03));
+  opacity: 0.72;
 }
 
 .topbar {
@@ -2423,6 +2419,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .hero-section .hero-kicker,
+  .hero-section .hero-side,
+  .hero-section .hero-service-strip {
+    display: none !important;
+  }
+
   .service-grid,
   .project-grid,
   .footer-grid,
@@ -2540,6 +2542,12 @@
   .service-lanes,
   .home-projects .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-section .hero-kicker,
+  .hero-section .hero-side,
+  .hero-section .hero-service-strip {
+    display: none;
   }
 
   .home-services,
