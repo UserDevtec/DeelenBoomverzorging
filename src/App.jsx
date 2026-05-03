@@ -16,7 +16,7 @@ import { useLayoutEffect, useState } from 'react'
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 
-const assetPath = (path) =>
+const asset = (path) =>
   `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
 
 const contact = {
@@ -40,7 +40,7 @@ const services = [
   {
     slug: 'bomen-snoeien',
     title: 'Bomen snoeien',
-    image: assetPath('images/snoeien.jpg'),
+    image: asset('images/snoeien.jpg'),
     summary:
       'Snoei op maat voor veiligheid, vitaliteit en een natuurlijke kroonvorm.',
     text: 'Snoeien is altijd een oplossing op maat. Daarbij staat de veiligheid van mens, dier en omgeving centraal. Soms is snoei noodzakelijk om overlast van te grote of laaghangende takken te beperken, in andere gevallen juist om de gezondheid en levensduur van de boom te bevorderen. Afhankelijk van de situatie passen wij verschillende snoeitechnieken toe, zoals onderhoudssnoei, begeleidingssnoei en het verwijderen van dode of gevaarlijke takken.',
@@ -48,7 +48,7 @@ const services = [
   {
     slug: 'bomen-verwijderen',
     title: 'Bomen verwijderen',
-    image: assetPath('images/verwijderen.jpg'),
+    image: asset('images/verwijderen.jpg'),
     summary:
       'Gecontroleerd vellen en afbreken, ook bij beperkte ruimte of bebouwing.',
     text: 'Soms is het noodzakelijk om een boom te verwijderen, bijvoorbeeld bij stormschade, ziekte of wanneer hij een risico vormt voor zijn omgeving. Wij voeren boomverwijderingen veilig en efficient uit, ook op lastig bereikbare plekken of dicht bij bebouwing. Met klimtechnieken, hijskranen of gespecialiseerd materieel zorgen wij dat de boom gecontroleerd wordt verwijderd.',
@@ -56,7 +56,7 @@ const services = [
   {
     slug: 'boomcontrole',
     title: 'Boomcontrole en advies',
-    image: assetPath('images/boomcontrole.jpg'),
+    image: asset('images/boomcontrole.jpg'),
     summary:
       'Professionele beoordeling van vitaliteit, stabiliteit en veiligheid.',
     text: 'Een gezonde en veilige boom begint bij regelmatig toezicht. Met boomcontroles beoordelen wij vitaliteit, stabiliteit en veiligheid in uiteenlopende omgevingen. We letten op bladontwikkeling, groeivorm, ziekten, aantastingen en de staat van stam en wortels. Daarna geven we helder advies over onderhoud, snoei, bodemverbetering of vervanging.',
@@ -64,7 +64,7 @@ const services = [
   {
     slug: 'groeiplaats',
     title: 'Groeiplaats verbeteren',
-    image: assetPath('images/groeiplaats.jpg'),
+    image: asset('images/groeiplaats.jpg'),
     summary:
       'Betere bodemstructuur, waterhuishouding en doorwortelbare ruimte.',
     text: 'De groeiplaats bepaalt de vitaliteit en levensduur van een boom. In stedelijke of verstoorde omgevingen ontstaan vaak problemen door verdichting, bestrating of beperkte wortelruimte. Wij beoordelen en verbeteren groeiplaatsen met gerichte maatregelen zoals bodemverbetering, wortelgeleiding en lucht- en waterdoorlatende lagen.',
@@ -72,7 +72,7 @@ const services = [
   {
     slug: 'stronken-freezen',
     title: 'Stronken freezen en houtverwerking',
-    image: assetPath('images/stronken.jpg'),
+    image: asset('images/stronken.jpg'),
     summary:
       'Nette afronding na kapwerk, met duurzame verwerking van hout en takken.',
     text: 'Na het kappen blijft vaak een stronk achter die hinderlijk is voor nieuwe aanplant, bestrating of gebruik van de ruimte. Met professioneel stronken frezen verwijderen wij deze resten snel en effectief, zonder grote graafwerkzaamheden. Hout en takmateriaal verwerken wij zoveel mogelijk duurzaam, bijvoorbeeld als houtsnippers, brandhout of biomassa.',
@@ -82,17 +82,17 @@ const services = [
 const projects = [
   {
     title: 'Klimmend snoeien',
-    image: assetPath('images/klimmen.jpg'),
+    image: asset('images/klimmen.jpg'),
     tag: 'Moeilijk bereikbaar',
   },
   {
     title: 'Stormschade',
-    image: assetPath('images/stormschade.png'),
+    image: asset('images/stormschade.png'),
     tag: '24/7 noodhulp',
   },
   {
     title: 'Veilig werken rond bebouwing',
-    image: assetPath('images/over-ons.jpg'),
+    image: asset('images/over-ons.jpg'),
     tag: 'Controle en uitvoering',
   },
 ]
@@ -263,7 +263,7 @@ function Header() {
     <header className="site-header">
       <div className="nav-wrap">
         <Link className="brand" to="/" onClick={() => setMenuOpen(false)}>
-          <img className="brand-icon" src="/images/Icon-wit.png" alt="" />
+          <img className="brand-icon" src={asset('images/Icon-wit.png')} alt="" />
           <span>
             <strong>Deelen</strong>
             <small>Boomverzorging</small>
@@ -311,7 +311,7 @@ function Footer() {
       <div className="footer-grid">
         <div>
           <Link className="footer-brand" to="/">
-            <img className="brand-icon" src="/images/Icon-wit.png" alt="" />
+            <img className="brand-icon" src={asset('images/Icon-wit.png')} alt="" />
             <span>
               <strong>Deelen</strong>
               <small>Boomverzorging</small>
@@ -328,9 +328,9 @@ function Footer() {
             <a href={contact.phoneHref} aria-label="Telefoon">
               <Phone size={18} />
             </a>
-            <a href="/" aria-label="Social">
+            <Link to="/" aria-label="Social">
               <Share2 size={18} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -402,7 +402,7 @@ function Home() {
       <section className="hero-section">
         <img
           className="hero-bg"
-          src="/images/over-ons.jpg"
+          src={asset('images/over-ons.jpg')}
           alt="Boomverzorging in uitvoering"
         />
         <div className="hero-inner">
@@ -499,7 +499,7 @@ function HomeAbout() {
   return (
     <section className="home-about">
       <div className="home-about-media">
-        <img src="/images/klimmen.jpg" alt="Boomverzorger aan het werk" />
+        <img src={asset('images/klimmen.jpg')} alt="Boomverzorger aan het werk" />
         <div className="about-year-badge">
           <span>Sinds</span>
           <strong>2016</strong>
@@ -558,7 +558,7 @@ function ServicesPage() {
       <PageHero
         title="Onze diensten"
         text="Van onderhoudssnoei tot complete verwijdering: elke boom vraagt om een aanpak die technisch klopt en veilig uitvoerbaar is."
-        image="/images/groeiplaats.jpg"
+        image={asset('images/groeiplaats.jpg')}
         chips={['Snoeien', 'Verwijderen', 'Boomcontrole']}
         card={{
           icon: TreePine,
@@ -621,7 +621,7 @@ function AboutPage() {
       <PageHero
         title="Over Deelen Boomverzorging"
         text="Uw partner in duurzame buitenruimte, met aandacht voor veiligheid, kwaliteit en gezonde bomen."
-        image="/images/klimmen.jpg"
+        image={asset('images/klimmen.jpg')}
         chips={['Sinds 2016', 'Klimtechniek', 'Vakmanschap']}
         card={{
           icon: ShieldCheck,
@@ -687,7 +687,7 @@ function ContactPage() {
       <PageHero
         title="Contact opnemen"
         text="We denken graag met je mee over advies, planning of een kennismaking op maat."
-        image="/images/contact.jpg"
+        image={asset('images/contact.jpg')}
         chips={['Bel direct', 'Offerte aanvragen', 'Nieuw-Lekkerland']}
         card={{
           icon: Phone,
@@ -960,8 +960,13 @@ function CtaBand() {
 }
 
 function App() {
+  const siteImages = {
+    '--image-contact': `url("${asset('images/contact.jpg')}")`,
+    '--image-storm': `url("${asset('images/stormschade.png')}")`,
+  }
+
   return (
-    <div className="site-shell">
+    <div className="site-shell" style={siteImages}>
       <ScrollToTop />
       <ScrollReveal />
       <Header />
