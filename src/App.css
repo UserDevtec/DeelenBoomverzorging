@@ -1504,16 +1504,14 @@
   width: 255px;
   min-height: 160px;
   display: grid;
-  align-content: end;
+  align-content: start;
   gap: 10px;
   flex: 0 0 auto;
   padding: 18px;
   border: 1px solid color-mix(in srgb, var(--card-accent) 24%, transparent);
   border-radius: 8px;
   color: var(--ink);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.72), var(--card-tint)),
-    linear-gradient(180deg, var(--card-tint-strong), transparent);
+  background: #fff;
   box-shadow: none;
   text-decoration: none;
   transition:
@@ -1557,8 +1555,9 @@
   transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--card-accent) 42%, transparent);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.9), var(--card-tint)),
-    linear-gradient(180deg, var(--card-tint-strong), transparent);
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.84)),
+    linear-gradient(180deg, var(--card-tint-strong), transparent),
+    #fff;
   box-shadow: 0 16px 32px color-mix(in srgb, var(--card-accent) 14%, transparent);
 }
 
@@ -1569,11 +1568,13 @@
 }
 
 .service-slide-card strong {
+  min-height: 42px;
   font-size: 19px;
   line-height: 1.1;
 }
 
 .service-slide-card small {
+  display: block;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.45;
@@ -2414,7 +2415,7 @@
   }
 
   .page-hero-card {
-    max-width: 560px;
+    display: none;
   }
 
   .hero-copy {
@@ -2539,7 +2540,7 @@
   }
 
   .page-hero-card {
-    padding: 20px;
+    display: none;
   }
 
   .hero-copy p {

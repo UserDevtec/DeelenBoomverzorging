@@ -43,7 +43,7 @@ const services = [
     image: asset('images/snoeien.jpg'),
     summary:
       'Snoei op maat voor veiligheid, vitaliteit en een natuurlijke kroonvorm.',
-    text: 'Snoeien is altijd een oplossing op maat. Daarbij staat de veiligheid van mens, dier en omgeving centraal. Soms is snoei noodzakelijk om overlast van te grote of laaghangende takken te beperken, in andere gevallen juist om de gezondheid en levensduur van de boom te bevorderen. Afhankelijk van de situatie passen wij verschillende snoeitechnieken toe, zoals onderhoudssnoei, begeleidingssnoei en het verwijderen van dode of gevaarlijke takken.',
+    text: 'Snoei op maat voor een veilige, gezonde en natuurlijk gevormde boom. We verwijderen hinderlijke of gevaarlijke takken en kiezen de snoeitechniek die past bij de situatie.',
   },
   {
     slug: 'bomen-verwijderen',
@@ -51,7 +51,7 @@ const services = [
     image: asset('images/verwijderen.jpg'),
     summary:
       'Gecontroleerd vellen en afbreken, ook bij beperkte ruimte of bebouwing.',
-    text: 'Soms is het noodzakelijk om een boom te verwijderen, bijvoorbeeld bij stormschade, ziekte of wanneer hij een risico vormt voor zijn omgeving. Wij voeren boomverwijderingen veilig en efficient uit, ook op lastig bereikbare plekken of dicht bij bebouwing. Met klimtechnieken, hijskranen of gespecialiseerd materieel zorgen wij dat de boom gecontroleerd wordt verwijderd.',
+    text: 'Wanneer een boom ziek, beschadigd of onveilig is, verwijderen we hem gecontroleerd. Ook dicht bij bebouwing werken we veilig met passende klimtechniek of materieel.',
   },
   {
     slug: 'boomcontrole',
@@ -59,7 +59,7 @@ const services = [
     image: asset('images/boomcontrole.jpg'),
     summary:
       'Professionele beoordeling van vitaliteit, stabiliteit en veiligheid.',
-    text: 'Een gezonde en veilige boom begint bij regelmatig toezicht. Met boomcontroles beoordelen wij vitaliteit, stabiliteit en veiligheid in uiteenlopende omgevingen. We letten op bladontwikkeling, groeivorm, ziekten, aantastingen en de staat van stam en wortels. Daarna geven we helder advies over onderhoud, snoei, bodemverbetering of vervanging.',
+    text: 'We beoordelen vitaliteit, stabiliteit en veiligheid van de boom. Daarna geven we duidelijk advies over onderhoud, snoei, groeiplaats of eventuele vervanging.',
   },
   {
     slug: 'groeiplaats',
@@ -67,7 +67,7 @@ const services = [
     image: asset('images/groeiplaats.jpg'),
     summary:
       'Betere bodemstructuur, waterhuishouding en doorwortelbare ruimte.',
-    text: 'De groeiplaats bepaalt de vitaliteit en levensduur van een boom. In stedelijke of verstoorde omgevingen ontstaan vaak problemen door verdichting, bestrating of beperkte wortelruimte. Wij beoordelen en verbeteren groeiplaatsen met gerichte maatregelen zoals bodemverbetering, wortelgeleiding en lucht- en waterdoorlatende lagen.',
+    text: 'Een goede groeiplaats bepaalt hoe sterk een boom blijft. We verbeteren bodem, waterhuishouding en wortelruimte met gerichte maatregelen.',
   },
   {
     slug: 'stronken-freezen',
@@ -75,7 +75,7 @@ const services = [
     image: asset('images/stronken.jpg'),
     summary:
       'Nette afronding na kapwerk, met duurzame verwerking van hout en takken.',
-    text: 'Na het kappen blijft vaak een stronk achter die hinderlijk is voor nieuwe aanplant, bestrating of gebruik van de ruimte. Met professioneel stronken frezen verwijderen wij deze resten snel en effectief, zonder grote graafwerkzaamheden. Hout en takmateriaal verwerken wij zoveel mogelijk duurzaam, bijvoorbeeld als houtsnippers, brandhout of biomassa.',
+    text: 'Na kapwerk verwijderen we stronken snel en netjes met professioneel freeswerk. Hout en takmateriaal verwerken we waar mogelijk duurzaam.',
   },
 ]
 
@@ -584,7 +584,6 @@ function ServicesPage() {
                   key={`${service.slug}-${index}`}
                   href={`#${service.slug}`}
                 >
-                  <span>0{(index % services.length) + 1}</span>
                   <strong>{service.title}</strong>
                   <small>{service.summary}</small>
                 </a>
@@ -601,10 +600,6 @@ function ServicesPage() {
                 <span className="eyebrow">0{index + 1} / Dienst</span>
                 <h2>{service.title}</h2>
                 <p>{service.text}</p>
-                <Link to="/contact" className="service-feature-link">
-                  Bespreek deze dienst
-                  <ArrowRight size={18} />
-                </Link>
               </div>
             </article>
           ))}
@@ -745,7 +740,7 @@ function ContactPage() {
           </div>
 
           <form className="quote-form" action={contact.emailHref} method="post">
-            <h2>Offerte aanvragen</h2>
+            <h2>Contact formulier</h2>
             <p>
               Beschrijf kort de situatie, locatie en wat je graag wilt laten
               doen. Dan kunnen we gericht reageren.
