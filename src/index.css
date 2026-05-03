@@ -1,0 +1,54 @@
+:root {
+  --bg: #ffffff;
+  --soft: #f3f7ef;
+  --ink: #18241c;
+  --muted: #627064;
+  --forest: #245d35;
+  --forest-dark: #12241a;
+  --leaf: #83b655;
+  --line: rgba(32, 51, 39, 0.14);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  color: var(--forest);
+  background: transparent;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-wrap: pretty;
+}
