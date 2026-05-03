@@ -542,7 +542,6 @@
 
 .page-hero-card.reveal-on-scroll,
 .home-about-media.reveal-on-scroll,
-.hours-panel.reveal-on-scroll,
 .quote-form.reveal-on-scroll {
   transform: translate3d(0, 30px, 0) scale(0.985);
 }
@@ -556,7 +555,6 @@
 
 .page-hero-card.reveal-on-scroll.is-visible,
 .home-about-media.reveal-on-scroll.is-visible,
-.hours-panel.reveal-on-scroll.is-visible,
 .quote-form.reveal-on-scroll.is-visible,
 .service-lane.reveal-on-scroll.is-visible,
 .project-card.reveal-on-scroll.is-visible,
@@ -1796,7 +1794,6 @@
 .services-index-grid a,
 .service-detail,
 .contact-action,
-.hours-panel,
 .quote-form,
 .contact-cards a,
 .value-slide {
@@ -1879,7 +1876,7 @@
 
 .contact-action-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.95fr 0.95fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 22px;
 }
@@ -1937,40 +1934,9 @@
 
 .contact-main {
   display: grid;
-  grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 22px;
   align-items: start;
-}
-
-.hours-panel {
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--soft);
-}
-
-.hours-panel h3 {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin: 0 0 18px;
-  color: var(--ink);
-}
-
-.hours-panel div {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 13px 0;
-  border-bottom: 1px solid rgba(32, 51, 39, 0.12);
-}
-
-.hours-panel div:last-child {
-  border-bottom: 0;
-}
-
-.hours-panel strong {
-  text-align: right;
 }
 
 .contact-details,
@@ -2686,7 +2652,6 @@
     padding: 20px;
   }
 
-  .hours-panel,
   .quote-form {
     padding: 22px;
   }

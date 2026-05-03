@@ -1,10 +1,8 @@
 import {
   ArrowRight,
   CheckCircle2,
-  Clock,
   Leaf,
   Mail,
-  MapPin,
   Menu,
   Phone,
   Share2,
@@ -56,7 +54,7 @@ const services = [
   {
     slug: 'boomcontrole',
     title: 'Boomcontrole en advies',
-    image: asset('images/boomcontrole.jpg'),
+    image: asset('images/boomcontrole.png'),
     summary:
       'Professionele beoordeling van vitaliteit, stabiliteit en veiligheid.',
     text: 'We beoordelen vitaliteit, stabiliteit en veiligheid van de boom. Daarna geven we duidelijk advies over onderhoud, snoei, groeiplaats of eventuele vervanging.',
@@ -97,16 +95,6 @@ const projects = [
   },
 ]
 
-const hours = [
-  ['Maandag', '07:00 - 21:00'],
-  ['Dinsdag', '07:00 - 21:00'],
-  ['Woensdag', '07:00 - 21:00'],
-  ['Donderdag', '07:00 - 21:00'],
-  ['Vrijdag', '07:00 - 21:00'],
-  ['Zaterdag', '07:00 - 21:00'],
-  ['Zondag', 'Gesloten / niet bereikbaar'],
-]
-
 const revealSelectors = [
   '.hero-copy > *',
   '.hero-service-strip',
@@ -130,7 +118,6 @@ const revealSelectors = [
   '.values-panel',
   '.contact-intro > *',
   '.contact-action',
-  '.hours-panel',
   '.quote-form',
   '.quote-form > *',
   '.contact-cards a',
@@ -150,7 +137,7 @@ function getRevealType(element) {
 
   if (
     element.matches(
-      '.hero-service-strip, .service-slide-card, .service-detail, .values-panel, .contact-action, .hours-panel, .quote-form, .contact-cards a, .footer-grid > div',
+      '.hero-service-strip, .service-slide-card, .service-detail, .values-panel, .contact-action, .quote-form, .contact-cards a, .footer-grid > div',
     )
   ) {
     return 'reveal-card'
@@ -263,7 +250,7 @@ function Header() {
     <header className="site-header">
       <div className="nav-wrap">
         <Link className="brand" to="/" onClick={() => setMenuOpen(false)}>
-          <img className="brand-icon" src={asset('images/Icon-wit.png')} alt="" />
+          <img className="brand-icon" src={asset('images/Icon-wit.svg')} alt="" />
           <span>
             <strong>Deelen</strong>
             <small>Boomverzorging</small>
@@ -311,7 +298,7 @@ function Footer() {
       <div className="footer-grid">
         <div>
           <Link className="footer-brand" to="/">
-            <img className="brand-icon" src={asset('images/Icon-wit.png')} alt="" />
+            <img className="brand-icon" src={asset('images/Icon-wit.svg')} alt="" />
             <span>
               <strong>Deelen</strong>
               <small>Boomverzorging</small>
@@ -713,32 +700,9 @@ function ContactPage() {
             <span>E-mail</span>
             <strong>{contact.email}</strong>
           </a>
-          <a
-            className="contact-action"
-            href={contact.maps}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MapPin />
-            <span>Locatie</span>
-            <strong>{contact.address}</strong>
-          </a>
         </div>
 
         <div className="contact-main">
-          <div className="hours-panel">
-            <h3>
-              <Clock size={18} />
-              Bereikbaar op deze tijden
-            </h3>
-            {hours.map(([day, time]) => (
-              <div key={day}>
-                <span>{day}</span>
-                <strong>{time}</strong>
-              </div>
-            ))}
-          </div>
-
           <form className="quote-form" action={contact.emailHref} method="post">
             <h2>Contact formulier</h2>
             <p>
