@@ -16,6 +16,9 @@ import { useLayoutEffect, useState } from 'react'
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 
+const assetPath = (path) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+
 const contact = {
   phone: '+31 6 11416527',
   phoneHref: 'tel:+31611416527',
@@ -37,7 +40,7 @@ const services = [
   {
     slug: 'bomen-snoeien',
     title: 'Bomen snoeien',
-    image: '/images/snoeien.jpg',
+    image: assetPath('images/snoeien.jpg'),
     summary:
       'Snoei op maat voor veiligheid, vitaliteit en een natuurlijke kroonvorm.',
     text: 'Snoeien is altijd een oplossing op maat. Daarbij staat de veiligheid van mens, dier en omgeving centraal. Soms is snoei noodzakelijk om overlast van te grote of laaghangende takken te beperken, in andere gevallen juist om de gezondheid en levensduur van de boom te bevorderen. Afhankelijk van de situatie passen wij verschillende snoeitechnieken toe, zoals onderhoudssnoei, begeleidingssnoei en het verwijderen van dode of gevaarlijke takken.',
@@ -45,7 +48,7 @@ const services = [
   {
     slug: 'bomen-verwijderen',
     title: 'Bomen verwijderen',
-    image: '/images/verwijderen.jpg',
+    image: assetPath('images/verwijderen.jpg'),
     summary:
       'Gecontroleerd vellen en afbreken, ook bij beperkte ruimte of bebouwing.',
     text: 'Soms is het noodzakelijk om een boom te verwijderen, bijvoorbeeld bij stormschade, ziekte of wanneer hij een risico vormt voor zijn omgeving. Wij voeren boomverwijderingen veilig en efficient uit, ook op lastig bereikbare plekken of dicht bij bebouwing. Met klimtechnieken, hijskranen of gespecialiseerd materieel zorgen wij dat de boom gecontroleerd wordt verwijderd.',
@@ -53,7 +56,7 @@ const services = [
   {
     slug: 'boomcontrole',
     title: 'Boomcontrole en advies',
-    image: '/images/boomcontrole.jpg',
+    image: assetPath('images/boomcontrole.jpg'),
     summary:
       'Professionele beoordeling van vitaliteit, stabiliteit en veiligheid.',
     text: 'Een gezonde en veilige boom begint bij regelmatig toezicht. Met boomcontroles beoordelen wij vitaliteit, stabiliteit en veiligheid in uiteenlopende omgevingen. We letten op bladontwikkeling, groeivorm, ziekten, aantastingen en de staat van stam en wortels. Daarna geven we helder advies over onderhoud, snoei, bodemverbetering of vervanging.',
@@ -61,7 +64,7 @@ const services = [
   {
     slug: 'groeiplaats',
     title: 'Groeiplaats verbeteren',
-    image: '/images/groeiplaats.jpg',
+    image: assetPath('images/groeiplaats.jpg'),
     summary:
       'Betere bodemstructuur, waterhuishouding en doorwortelbare ruimte.',
     text: 'De groeiplaats bepaalt de vitaliteit en levensduur van een boom. In stedelijke of verstoorde omgevingen ontstaan vaak problemen door verdichting, bestrating of beperkte wortelruimte. Wij beoordelen en verbeteren groeiplaatsen met gerichte maatregelen zoals bodemverbetering, wortelgeleiding en lucht- en waterdoorlatende lagen.',
@@ -69,7 +72,7 @@ const services = [
   {
     slug: 'stronken-freezen',
     title: 'Stronken freezen en houtverwerking',
-    image: '/images/stronken.jpg',
+    image: assetPath('images/stronken.jpg'),
     summary:
       'Nette afronding na kapwerk, met duurzame verwerking van hout en takken.',
     text: 'Na het kappen blijft vaak een stronk achter die hinderlijk is voor nieuwe aanplant, bestrating of gebruik van de ruimte. Met professioneel stronken frezen verwijderen wij deze resten snel en effectief, zonder grote graafwerkzaamheden. Hout en takmateriaal verwerken wij zoveel mogelijk duurzaam, bijvoorbeeld als houtsnippers, brandhout of biomassa.',
@@ -79,17 +82,17 @@ const services = [
 const projects = [
   {
     title: 'Klimmend snoeien',
-    image: '/images/klimmen.jpg',
+    image: assetPath('images/klimmen.jpg'),
     tag: 'Moeilijk bereikbaar',
   },
   {
     title: 'Stormschade',
-    image: '/images/stormschade.png',
+    image: assetPath('images/stormschade.png'),
     tag: '24/7 noodhulp',
   },
   {
     title: 'Veilig werken rond bebouwing',
-    image: '/images/over-ons.jpg',
+    image: assetPath('images/over-ons.jpg'),
     tag: 'Controle en uitvoering',
   },
 ]
